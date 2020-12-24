@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+		<title>Itunes Song Finder</title>
+		<link rel="stylesheet" href="./public/main.css">
+		<link rel="stylesheet" href= "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"> 
+
+	</head>
+	<body>
+		<div id="container">
+			<header class="main-screen">
+				<div>
+					<h1>Itunes Song Finder</h1>
+					<label for="searchMusicInput"> Search for your favourite artist</label>
+					<input type="text" id="searchMusicInput">
+					<button id="searchBtn">Find</button>
+				</div>
+			</header>
+			<main>
+				<div id="error" class="full-screen">
+					<h1>No results found for <span id="searchRes"></span></h1>
+				</div>
+				<div id="playing-div">
+					<div class="details">
+						<p>Currently playing: <em><span id="current"></span></em> </p>
+						<img src="./images/music-banner.png">
+						<p class="artistName"></p>
+						<p class="songName"></p>
+					</div>
+					<div class="controls">
+						<i id="back" class="fas fa-step-backward fa-2x"></i>
+						<i id="play" class="far fa-play-circle fa-5x"></i>
+						<i id="forward" class="fas fa-step-forward fa-2x"></i>
+					</div>
+
+					<div class="slider-container"> 
+						<p id="cur" class="current-time"></p>
+						<input type="range" min="0" max="1" value="0" step="0.01" id="progress" class="time-control"> 
+						<p id="dur" class="total-duration"></p>
+					</div> 
+
+					<div class="slider-container"> 
+						<i class="fa fa-volume-down icons"></i> 
+						<input type="range" min="0" max="1" value="0.75" step="0.01" id="volume" class="volume-control"> 
+						<i class="fa fa-volume-up icons"></i> 
+					</div> 
+
+					<div class="sub-controls">
+						<i id="shuffle" class="fas fa-random"></i>
+						<i id="repeat" class="fas fa-sync-alt"></i>
+						<i id="fav" class="far fa-heart"></i>
+					</div>
+				</div>
+
+				<div id="playlist-head">
+					<h1> Your Playlist </h1>
+					<i id="line" class="fas fa-list"></i>
+					<i id="bubble" class="fas fa-th icon-click"></i>
+				</div>
+
+				<div id="songs" class="bubble"></div>
+
+				<template id="songs-template">
+					<div class="song-item">
+						<img src="">
+						<div>
+							<p class="artistName"></p>
+						</div>
+						<div>
+							<p class="songName"></p>
+						</div>
+						<audio controls="controls"><source src="" type=""></audio>
+					</div>
+				</template>
+			</main>
+		</div>
+
+
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.28.0/moment.min.js" integrity="sha512-Q1f3TS3vSt1jQ8AwP2OuenztnLU6LwxgyyYOG1jgMW/cbEMHps/3wjvnl1P3WTrF3chJUWEoxDUEjMxDV8pujg==" crossorigin="anonymous"></script>
+		 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-duration-format/1.3.0/moment-duration-format.min.js"></script>
+		<script src="./public/script.js"></script>
+	</body>
+</html>
